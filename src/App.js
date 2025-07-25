@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './components/Header'
+import Summary from './components/Summary'
+import TransactionForm from './components/TransactionForm'
+import TransactionList from './components/TransactionList'
+import { ExpenseProvider } from './context/ExpenseContext'
 
-function App() {
+import Filters from './components/Filters'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+   <ExpenseProvider>
+    <div className="container mt-5 p-4 rounded shadow" style={{ backgroundColor: "#f1f1f1" }}>
+<Header/>
+<Summary/>
+<Filters/>
+<TransactionForm/>
+<TransactionList/>
     </div>
-  );
+   </ExpenseProvider>
+   </>
+  )
 }
 
-export default App;
+export default App
