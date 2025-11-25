@@ -22,16 +22,18 @@ const Filters = () => {
       <input
         type="date"
         className="form-control w-auto"
-        style={{
-    WebkitAppearance: "none",
-    appearance: "none",
-    backgroundColor: "#fff",
+       style={{
     color: "#000",
-    padding: "10px",
-    border: "1px solid #ccc",
-    width: "100%",
-    opacity: 1
+    background: "#fff",
+    opacity: 1,
+    display: "block"
   }}
+  onFocus={(e) => (e.target.type = "date")}
+  onBlur={(e) => {
+    if (!e.target.value) e.target.type = "text";
+  }}
+ 
+  placeholder="Select Date"
         onChange={handleDateChange}
         value={state.filter.date}
       />
