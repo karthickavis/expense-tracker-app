@@ -21,7 +21,7 @@ const Filters = () => {
       </select>
       <input
         type="date"
-        className="form-control w-auto"
+        className="form-control w-auto bg-white text-dark"
         onChange={handleDateChange}
         value={state.filter.date}
       />
