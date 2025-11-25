@@ -62,18 +62,7 @@ const TransactionForm = () => {
       />
       <input
         type="date"
-        className="form-control mb-2"
-    style={{
-    color: "#000",
-    background: "#fff",
-    opacity: 1,
-    display: "block"
-  }}
-  onFocus={(e) => (e.target.type = "date")}
-  onBlur={(e) => {
-    if (!e.target.value) e.target.type = "text";
-  }}
- 
+        className="w-100 p-2 mb-2"
   placeholder="Select Date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
