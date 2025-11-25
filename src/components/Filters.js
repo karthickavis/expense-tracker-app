@@ -22,6 +22,7 @@ const Filters = () => {
       <input
         type="date"
         className="form-control w-auto bg-white text-dark"
+        style={{ WebkitAppearance: "none", appearance: "none" }}
         onChange={handleDateChange}
         value={state.filter.date}
       />

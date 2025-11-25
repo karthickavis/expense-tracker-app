@@ -63,6 +63,7 @@ const TransactionForm = () => {
       <input
         type="date"
         className="form-control mb-2 bg-white text-dark"
+        style={{ WebkitAppearance: "none", appearance: "none" }}
         value={date}
         onChange={(e) => setDate(e.target.value)}
         required
