@@ -61,11 +61,17 @@ const TransactionForm = () => {
         required
       />
       <input
-        type="date"
-        className="w-100 p-2 mb-2"
+        type="text"
+        className=" form-control w-100 p-2 mb-2"
+          style={{ border: "none", outline: "none" }}
+
   placeholder="Select Date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
+        onFocus={(e) => (e.target.type = "date")}
+  onBlur={(e) => {
+    if (!e.target.value) e.target.type = "text";
+  }}
         required
       />
       <select

@@ -13,31 +13,25 @@ const Filters = () => {
   };
 
   return (
-    <div className="d-flex gap-3 justify-content-center my-3">
-      <select className="form-select w-auto" onChange={handleTypeChange}>
-        <option value="All">All</option>
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-      </select>
-      <input
-        type="date"
-        className="form-control w-auto"
-       style={{
-    color: "#000",
-    background: "#fff",
-    opacity: 1,
-    display: "block"
-  }}
-  onFocus={(e) => (e.target.type = "date")}
-  onBlur={(e) => {
-    if (!e.target.value) e.target.type = "text";
-  }}
- 
-  placeholder="Select Date"
-        onChange={handleDateChange}
-        value={state.filter.date}
-      />
-    </div>
+ <div className="d-flex  gap-3 justify-content-center my-3">
+  <select className="form-select w-50 w-sm-auto" style={{maxWidth:'200px'}} onChange={handleTypeChange}>
+    <option value="All">All</option>
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+
+  <input
+    type="text"
+    className="form-control w-50 w-sm-auto"
+    style={{ border: "none", outline: "none",maxWidth:'200px' }}
+    onFocus={(e) => (e.target.type = "date")}
+    onBlur={(e) => !e.target.value && (e.target.type = "text")}
+    placeholder="Select Date"
+    onChange={handleDateChange}
+    value={state.filter.date}
+  />
+</div>
+
   );
 };
 
